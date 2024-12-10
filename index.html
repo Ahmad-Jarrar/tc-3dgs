@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Temporally Compressed 3D Gaussian Splatting for Dynamic Scenes">
+  <meta name="keywords" content="3DGS, Gaussian Splatting, Compression">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TC3DGS</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="icon" href="./static/images/EPFL_Logo_Digital_RGB_PROD.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/compare.js"></script>
+  <script src="./static/js/index.js"></script>
+
+
+</head>
+
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Temporally Compressed 3D Gaussian Splatting for Dynamic Scenes</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="mailto:saqib.javed@epfl.ch">Saqib Javed</a><sup>&dagger;,1</sup>,</span>
+              <span class="author-block">
+                <a href="mailto:ahmad.khan@epfl.ch">Ahmad Jarrar Khan</a><sup>&dagger;,1</sup>,</span>
+              <span class="author-block">
+                <a href="mailto:corentin.dumery@epfl.ch">Corentin Dumery</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="mailto:chen.zhao@epfl.ch">Chen Zhao</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="mailto:mathieu.salzmann@epfl.ch">Mathieu Salzmann</a><sup>1,2</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>EPFL,</span>
+              <span class="author-block"><sup>2</sup>Swiss Data Science Center</span>
+            </div>
+
+            <!-- Equal Contribution -->
+
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>&dagger;</sup>Equal Contribution</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2412.05700" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2412.05700" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://github.com/google/nerfies" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+                <!-- Dataset Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span> -->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/teaser.mp4" type="video/mp4">
+        </video> -->
+        ,<img src="./static/images/4dgs.svg " alt="">
+        <!-- <h2 class="subtitle has-text-centered">
+          <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+          free-viewpoint
+          portraits.
+        </h2> -->
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Recent advancements in high-fidelity dynamic scene reconstruction have leveraged dynamic 3D Gaussians and
+              4D Gaussian Splatting for realistic scene representation. However, to make these methods viable for
+              real-time applications such as AR/VR, gaming, and rendering on low-power devices, substantial reductions
+              in memory usage and improvements in rendering efficiency are required.
+            </p>
+            <p>
+              While many state-of-the-art methods prioritize lightweight implementations, they struggle in handling
+              scenes with complex motions or long sequences. In this work, we introduce Temporally Compressed 3D
+              Gaussian Splatting (TC3DGS), a novel technique designed specifically to effectively compress dynamic 3D
+              Gaussian representations.
+            </p>
+            <p>
+              TC3DGS selectively prunes Gaussians based on their temporal relevance and employs gradient-aware
+              mixed-precision quantization to dynamically compress Gaussian parameters. It additionally relies on a
+              variation of the Ramer-Douglas-Peucker algorithm in a post-processing step to further reduce storage by
+              interpolating Gaussian trajectories across frames.
+            </p>
+            <p>
+              Our experiments across multiple datasets demonstrate that TC3DGS achieves up to <strong>67x
+                compression</strong> with
+              minimal or no degradation in visual quality.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
+          <!-- <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div> -->
+          <!-- Add method image -->
+          <img src="./static/images/method.png" alt="Method" style="width: 100%; max-width: 1000px;">
+
+        </div>
+      </div>
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+  <section class="section">
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">Comparisons</h2>
+
+          <!-- Video Comparison -->
+          <div class="compare">
+            <!-- <img class="compared compared-left" data-compare="standard" src="./static/images/interpolate_start.jpg" />
+            <img class="compared compared-right" data-compare="ours" src="./static/images/interpolate_end.jpg" /> -->
+          </div>
+
+          <h2 class="subtitle is-4">Ours vs Dynamic3DGaussians</h2>
+          <div class="compare">
+            <video class="compared compared-left" data-compare="Ours" loop muted autoplay>
+              <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              <p>Your browser doesn't support HTML5 video. Here is a <a
+                  href="./static/videos/basketball_ours_0.webm">link to the video</a> instead.
+              </p>
+            </video>
+            <video class="compared compared-right" data-compare="Dynamic3DGS" loop muted autoplay>
+              <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
+              <source src="./static/videos/basketball_pretrained_0.webm" type="video/webm">
+              <p>Your browser doesn't support HTML5 video. Here is a <a
+                  href="./static/videos/basketball_pretrained_0.webm">link to the video</a> instead.
+              </p>
+            </video>
+          </div>
+
+          <h2 class="subtitle is-4">Ours vs 4DGaussians</h2>
+          <div class="compare">
+            <video class="compared compared-left" data-compare="Ours" loop muted autoplay>
+              <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              <p>Your browser doesn't support HTML5 video. Here is a <a
+                  href="./static/videos/basketball_ours_0.webm">link to the video</a> instead.
+              </p>
+            </video>
+            <video class="compared compared-right" data-compare="4D Gaussians" loop muted autoplay>
+              <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
+              <source src="./static/videos/basketball_4dgaussian_0.webm" type="video/webm">
+              <p>Your browser doesn't support HTML5 video. Here is a <a
+                  href="./static/videos/basketball_4dgaussian_0.webm">link to the video</a> instead.
+              </p>
+            </video>
+          </div>
+
+          <h2 class="subtitle is-4">Ours vs STG</h2>
+          <div class="compare">
+            <video class="compared compared-left" data-compare="Ours" loop muted autoplay>
+              <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              <p>Your browser doesn't support HTML5 video. Here is a <a
+                  href="./static/videos/basketball_ours_0.webm">link to the video</a> instead.
+              </p>
+            </video>
+            <video class="compared compared-right" data-compare="STG" loop muted autoplay>
+              <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
+              <source src="./static/videos/basketball_c3dgs_0.webm" type="video/webm">
+              <p>Your browser doesn't support HTML5 video. Here is a <a
+                  href="./static/videos/basketball_c3dgs_0.webm">link to the video</a> instead.
+              </p>
+            </video>
+          </div>
+
+          <h2 class="subtitle is-4">Ours vs Ground Truth</h2>
+          <div class="compare">
+            <video class="compared compared-left" data-compare="Ours" loop muted autoplay>
+              <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              <p>Your browser doesn't support HTML5 video. Here is a <a
+                  href="./static/videos/basketball_ours_0.webm">link
+                  to the video</a> instead.
+              </p>
+            </video>
+            <video class="compared compared-right" data-compare="Ground Truth" loop muted autoplay>
+              <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
+              <source src="./static/videos/basketball_gt_0.webm" type="video/webm">
+              <p>Your browser doesn't support HTML5 video. Here is a <a href="./static/videos/basketball_gt_0.webm">link
+                  to the video</a> instead.
+              </p>
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section class="section">
+
+    <section class="hero is-small">
+
+
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">Panoptic Sports Dataset</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+
+            <div class="item item-chair-tp">
+              <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              </video>
+            </div>
+
+            <div class="item item-blueshirt">
+              <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              </video>
+            </div>
+
+            <div class="item item-coffee">
+              <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              </video>
+            </div>
+            <div class="item item-mask">
+              <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              </video>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <section class="section">
+
+    <section class="hero is-small">
+
+
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">DyNeRF Dataset</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+
+            <div class="item item-chair-tp">
+              <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              </video>
+            </div>
+
+            <div class="item item-blueshirt">
+              <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              </video>
+            </div>
+
+            <div class="item item-coffee">
+              <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              </video>
+            </div>
+            <div class="item item-mask">
+              <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+              </video>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <section class="section">
+
+    <section class="hero is-small">
+
+
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">Technicolor Dataset</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+
+            <div class="item item-brithday">
+              <video poster="" id="brithday" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/birthday_ours.webm" type="video/webm">
+              </video>
+            </div>
+
+            <div class="item item-fabien">
+              <video poster="" id="fabien" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/fabien_ours.webm" type="video/webm">
+              </video>
+            </div>
+
+            <div class="item item-painter">
+              <video poster="" id="painter" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/painter_ours.webm" type="video/webm">
+              </video>
+            </div>
+
+            <div class="item item-theater">
+              <video poster="" id="theater" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/theater_ours.webm" type="video/webm">
+              </video>
+
+            </div>
+            <!-- <div class="item item-train">
+              <video poster="" id="train" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/train_ours.webm" type="video/webm">
+              </video>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{javed2024temporallycompressed3dgaussian,
+        title={Temporally Compressed 3D Gaussian Splatting for Dynamic Scenes}, 
+        author={Saqib Javed and Ahmad Jarrar Khan and Corentin Dumery and Chen Zhao and Mathieu Salzmann},
+        year={2024},
+        eprint={2412.05700},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2412.05700}, 
+  }</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="./static/2412.05700v1.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <!-- <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a> -->
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is based on the source code of <a
+                href="https://github.com/nerfies/nerfies.github.io">nerfies</a>. We thank the authors for sharing the
+              templates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
