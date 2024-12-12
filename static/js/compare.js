@@ -1,16 +1,16 @@
 (function (factory) {
   //namespacing
-  if (!window["Compare"]) {
-    window["Compare"] = {};
+  if (!window["Compare1"]) {
+    window["Compare1"] = {};
   }
-  factory(window["Compare"]);
+  factory(window["Compare1"]);
 })(function (Compare) { //namespace Compare
 
   /*** Global comparator ***/
 
   /* setup all elements of class compare */
   function setup_comparators() {
-    var comparators = document.querySelectorAll(".compare");
+    var comparators = document.querySelectorAll(".compare1");
     for (var comparator of comparators) {
       var videos = [...comparator.querySelectorAll("video")];
       wait_for_videos(videos, comparator, setup_comparator);
@@ -49,7 +49,7 @@
   /* setup a comparator element */
   function setup_comparator(comparator) {
     //get compared element
-    var compared = comparator.querySelectorAll(".compared");
+    var compared = comparator.querySelectorAll(".compared1");
     if (compared.length == 0) {
       console.error("comparator contains no compared element");
       return;
@@ -63,7 +63,7 @@
     var sources = [];
     if (compared.length == 1) {
       //a single compared element, has to be vertical or horizontal
-      if (compared[0].classList.contains("compared-vertical")) {
+      if (compared[0].classList.contains("compared1-vertical")) {
         //single image or video horizontally split
         h = h / 2;
         sources.push({
@@ -78,7 +78,7 @@
           x: 0,
           y: h
         });
-      } else if (compared[0].classList.contains("compared-horizontal")) {
+      } else if (compared[0].classList.contains("compared1-horizontal")) {
         //single image or video vertically split
         w = w / 2;
         sources.push({
@@ -99,8 +99,8 @@
       }
     } else if (compared.length == 2) {
       //two compared elements, one should be left, the other one right
-      var left = comparator.querySelector(".compared-left");
-      var right = comparator.querySelector(".compared-right");
+      var left = comparator.querySelector(".compared1-left");
+      var right = comparator.querySelector(".compared1-right");
       if (left && right) {
         sources.push({
           elt: left,
@@ -295,7 +295,7 @@
 
     //change x and y to the comparator frame
     var canvas_rect = context.canvas.getBoundingClientRect();
-    var comparator_rect = context.canvas.closest(".compare").getBoundingClientRect();
+    var comparator_rect = context.canvas.closest(".compare1").getBoundingClientRect();
     x = x + canvas_rect.left - comparator_rect.left;
     y = y + canvas_rect.top - comparator_rect.top;
 
@@ -449,7 +449,7 @@
   function create_slider(name, context, context_target, min, max, step) {
     //container for everything
     var container = document.createElement("div");
-    container.className = "compare-setting";
+    container.className = "compare1-setting";
 
     //slider
     var input = document.createElement("input");
@@ -492,7 +492,7 @@
   function create_play_toggle(context) {
     //container
     var container = document.createElement("div");
-    container.className = "compare-setting";
+    container.className = "compare1-setting";
 
     //play / pause
     var icon = document.createElement("div");
@@ -516,7 +516,7 @@
   function create_settings(elt, context) {
     //settings bar
     var settings = document.createElement("div");
-    settings.className = "compare-settings";
+    settings.className = "compare1-settings";
     elt.appendChild(settings);
 
     //zoom slider

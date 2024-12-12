@@ -31,15 +31,20 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="stylesheet" href="./static/css/style.css">
-  <link rel="icon" href="./static/images/EPFL_Logo_Digital_RGB_PROD.png">
+  <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/compare.js"></script>
   <script src="./static/js/index.js"></script>
-
+  
+  <script src="./static/twentytwenty/js/jquery-3.2.1.min.js" defer type="text/javascript"></script>
+  <script src="./static/twentytwenty/js/jquery.event.move.js" defer type="text/javascript"></script>
+  <script src="./static/twentytwenty/js/jquery.twentytwenty.js" defer type="text/javascript"></script>
+  <link rel="stylesheet" href="./static/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
 
 </head>
 
@@ -54,7 +59,7 @@
             <h1 class="title is-1 publication-title">Temporally Compressed 3D Gaussian Splatting for Dynamic Scenes</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="mailto:saqib.javed@epfl.ch">Saqib Javed</a><sup>&dagger;</sup>,</span>
+                <a href="https://www.linkedin.com/in/saqibjaved7/">Saqib Javed</a><sup>&dagger;</sup>,</span>
               <span class="author-block">
                 <a href="mailto:ahmad.khan@epfl.ch">Ahmad Jarrar Khan</a><sup>&dagger;</sup>,</span>
               <span class="author-block">
@@ -80,19 +85,9 @@
               <span class="author-block"><sup>&dagger;</sup>Equal Contribution</span>
             </div>
 
-            <div class="columns is-size-5 publication-authors is-justify-content-center is-vcentered pt-5 mt-5">
-              <div class="is-one-third">
-                <img src="./static/images/cvlab_logo.png" alt="EPFL" style="height: 3em;" class="mx-5">
-              </div>
-              <div class="is-one-third">
-                <img src="./static/images/EPFL_Logo_Digital_RGB_PROD.png" alt="EPFL" style="height: 4em;" class="mx-5">
-              </div>
-              <div class="is-one-third">
-                <img
-                  src="https://cdn.prod.website-files.com/63ea083f4e797cf53055586b/6405c3775c1e61bd7d547e31_logo-sdsc.png"
-                  alt="SDSC" style="height: 3em;" class="mx-5">
-              </div>
-            </div>
+            <img src="./static/images/cvlab_logo.png" alt="EPFL" style="width:12%; height:auto;margin-right: -30px;margin-left: 50px;">
+            <img src="./static/images/favicon.svg" alt="EPFL" style="width:12%; height:auto;margin-left: 60px;">
+            <img src="./static/images/sdsc.png" alt="EPFL" style="width:15%; height:auto; margin-left: 38px; margin-bottom: 4px;">
 
 
             <div class="column has-text-centered">
@@ -215,34 +210,39 @@
           </div> -->
           <!-- Add method image -->
           <img src="./static/images/method.png" alt="Method" style="width: 100%; max-width: 1000px;">
-
+          <div class="content has-text-justified">
+            Our approach involves a temporally consistent masking strategy to select relevant 3D Gaussians across frames. The masked Gaussians are then pruned and quantized using a gradient-based, parameter-aware bit-precision quantization scheme, which optimizes memory usage while preserving scene fidelity.
+          </div>
         </div>
       </div>
       <!--/ Paper video. -->
     </div>
   </section>
 
+  \<center>
+    <h2 class="title is-3">Visual Comparisons</h2>
+  </center>
+  
   <section class="section">
     <section class="hero is-light is-small">
       <div class="hero-body">
         <div class="container is-max-desktop">
-          <h2 class="title is-3">Comparisons</h2>
-
+          <h2 class="title is-3">Panoptic Dataset</h2>
           <!-- Video Comparison -->
-          <div class="compare">
+          <!-- <div class="compare1"> -->
             <!-- <img class="compared compared-left" data-compare="standard" src="./static/images/interpolate_start.jpg" />
             <img class="compared compared-right" data-compare="ours" src="./static/images/interpolate_end.jpg" /> -->
-          </div>
+          <!-- </div> -->
 
-          <h2 class="subtitle is-4">Ours vs Dynamic3DGaussians</h2>
-          <div class="compare">
-            <video class="compared compared-left" data-compare="Ours" loop muted autoplay>
+          <h2 class="is-size-5">Ours vs Dynamic3DGaussians</h2>
+          <div class="compare1">
+            <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay>
               <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
               <p>Your browser doesn't support HTML5 video. Here is a <a
                   href="./static/videos/basketball_ours_0.webm">link to the video</a> instead.
               </p>
             </video>
-            <video class="compared compared-right" data-compare="Dynamic3DGS" loop muted autoplay>
+            <video class="compared1 compared1-right" data-compare="Dynamic3DGS" loop muted autoplay>
               <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
               <source src="./static/videos/basketball_pretrained_0.webm" type="video/webm">
               <p>Your browser doesn't support HTML5 video. Here is a <a
@@ -251,15 +251,15 @@
             </video>
           </div>
 
-          <h2 class="subtitle is-4">Ours vs 4DGaussians</h2>
-          <div class="compare">
-            <video class="compared compared-left" data-compare="Ours" loop muted autoplay>
+          <h2 class="is-size-5">Ours vs 4DGaussians</h2>
+          <div class="compare1">
+            <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay>
               <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
               <p>Your browser doesn't support HTML5 video. Here is a <a
                   href="./static/videos/basketball_ours_0.webm">link to the video</a> instead.
               </p>
             </video>
-            <video class="compared compared-right" data-compare="4D Gaussians" loop muted autoplay>
+            <video class="compared1 compared1-right" data-compare="4D Gaussians" loop muted autoplay>
               <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
               <source src="./static/videos/basketball_4dgaussian_0.webm" type="video/webm">
               <p>Your browser doesn't support HTML5 video. Here is a <a
@@ -268,15 +268,15 @@
             </video>
           </div>
 
-          <h2 class="subtitle is-4">Ours vs STG</h2>
-          <div class="compare">
-            <video class="compared compared-left" data-compare="Ours" loop muted autoplay>
+          <h2 class="is-size-5">Ours vs STG</h2>
+          <div class="compare1">
+            <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay>
               <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
               <p>Your browser doesn't support HTML5 video. Here is a <a
                   href="./static/videos/basketball_ours_0.webm">link to the video</a> instead.
               </p>
             </video>
-            <video class="compared compared-right" data-compare="STG" loop muted autoplay>
+            <video class="compared1 compared1-right" data-compare="STG" loop muted autoplay>
               <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
               <source src="./static/videos/basketball_stg_0.webm" type="video/webm">
               <p>Your browser doesn't support HTML5 video. Here is a <a
@@ -285,16 +285,16 @@
             </video>
           </div>
 
-          <h2 class="subtitle is-4">Ours vs Ground Truth</h2>
-          <div class="compare">
-            <video class="compared compared-left" data-compare="Ours" loop muted autoplay>
+          <h2 class="is-size-5">Ours vs Ground Truth</h2>
+          <div class="compare1">
+            <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay>
               <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
               <p>Your browser doesn't support HTML5 video. Here is a <a
                   href="./static/videos/basketball_ours_0.webm">link
                   to the video</a> instead.
               </p>
             </video>
-            <video class="compared compared-right" data-compare="Ground Truth" loop muted autoplay>
+            <video class="compared1 compared1-right" data-compare="Ground Truth" loop muted autoplay>
               <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
               <source src="./static/videos/basketball_gt_0.webm" type="video/webm">
               <p>Your browser doesn't support HTML5 video. Here is a <a href="./static/videos/basketball_gt_0.webm">link
@@ -308,61 +308,113 @@
     </section>
   </section>
 
-  <section class="section">
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Creates 2 columns with equal width */
+      grid-gap: 10px; /* Adjust the gap between the divs */
+    }
+    .grid-item {
+      width: 100%;
+    }
+  </style>
 
-    <section class="hero is-small">
+<section class="section">
+
+  <section class="hero is-small">
 
 
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <h2 class="title is-3">Neural 3d Video Dataset</h2>
-          <div class="columns is-centered">
-            <!-- Add image comparisons -->
-            <div class="column is-half">
-              <div class="compare">
-                <img class="compared compared-left" data-compare="Ground Truth" src="./static/images/steak_gt.png" />
-                <img class="compared compared-right" data-compare="Ours" src="./static/images/steak_ours.png" />
-              </div>
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full-width">
+
+            
+            <div class="content has-text-justified">
+              <h3 class="title is-3">Technicolor Dataset</h2>
+                      <!-- Add image comparisons -->
+                      <style>
+                        .grid-container {
+                          display: grid;
+                          grid-template-columns: repeat(2, 1fr); /* Creates 2 columns with equal width */
+                          grid-gap: 10px; /* Adjust the gap between the divs */
+                        }
+                        .grid-item {
+                          width: 100%;
+                        }
+                      </style>
+
+                  <div class="grid-container">
+                    <div class="grid-item">
+                      <div class="compare" style="width: 467px; margin-right: 20px; ">
+                        <img class="slider-image" style="width: 467px" src="./static/images/painter_ours.png" />
+                        <img class="slider-image" style="width: 467px" src="./static/images/painter_gt.png" />
+                      </div>
+                    </div>
+                    <div class="grid-item">
+                      <div class="compare" style="width: 467px; margin-right: 20px; ">
+                        <img class="slider-image" style="width: 467px" src="./static/images/train_ours.png" />
+                        <img class="slider-image" style="width: 467px" src="./static/images/train_gt.png" />
+                      </div>
+                    </div>
+                    
+                    <div class="grid-item">
+                      <div>
+                        <span style="display: inline; text-align: left; margin-right: 335px;"><b>Ours</b></span>
+                        <span style="display: inline; text-align: right; margin-left: -10px"><b>Ground Truth</b></span>
+                      </div>
+                    </div>
+
+                    <div class="grid-item">
+                      <div>
+                        <span style="display: inline; text-align: left; margin-right: 335px;"><b>Ours</b></span>
+                          <span style="display: inline; text-align: right; margin-left: -10px"><b>Ground Truth</b></span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--/ Paper video. -->
+
+
+                  <h3 class="title is-3">Neural 3D Video Dataset</h2>
+
+                  <div class="grid-container">
+                    <div class="grid-item">
+                      <div class="compare" style="width: 467px; margin-right: 20px;">
+                        <img class="slider-image" style="width: 467px" src="./static/images/spinich_ours.png" />
+                        <img class="slider-image" style="width: 467px" src="./static/images/spinich_gt.png" />
+                      </div>
+                    </div>
+                    <div class="grid-item">
+                      <div class="compare" style="width: 467px;">
+                        <img class="slider-image" style="width: 467px" src="./static/images/steak_ours.png" />
+                        <img class="slider-image" style="width: 467px" src="./static/images/steak_ours.png" />
+                      </div>
+                    </div>
+                    <div class="grid-item">
+                      <div>
+                        <span style="display: inline; text-align: left; margin-right: 335px;"><b>Ours</b></span>
+                        <span style="display: inline; text-align: right; margin-left: -10px"><b>Ground Truth</b></span>
+                      </div>
+                    </div>
+
+                    <div class="grid-item">
+                      <div>
+                        <span style="display: inline; text-align: left; margin-right: 335px;"><b>Ours</b></span>
+                          <span style="display: inline; text-align: right; margin-left: -10px"><b>Ground Truth</b></span>
+                      </div>
+                    </div>
+                  </div>
             </div>
-            <div class="column is-half">
-              <div class="compare">
-                <img class="compared compared-left" data-compare="Ground Truth" src="./static/images/spinich_gt.png" />
-                <img class="compared compared-right" data-compare="Ours" src="./static/images/spinich_ours.png" />
-              </div>
-            </div>
-    </section>
+          </div>
 
+        </div>
+      </div>
+    </div>
+  </section>
   </section>
 
-  <section class="section">
 
-    <section class="hero is-small">
-
-
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <h2 class="title is-3">Technicolor Dataset</h2>
-          <div class="columns is-centered">
-            <!-- Add image comparisons -->
-            <div class="column is-half">
-              <div class="compare">
-                <img class="compared compared-left" data-compare="Ground Truth" src="./static/images/painter_gt.png" />
-                <img class="compared compared-right" data-compare="Ours" src="./static/images/painter_ours.png" />
-              </div>
-            </div>
-            <div class="column is-half">
-              <div class="compare">
-                <img class="compared compared-left" data-compare="Ground Truth" src="./static/images/train_gt.png" />
-                <img class="compared compared-right" data-compare="Ours" src="./static/images/train_ours.png" />
-              </div>
-            </div>
-    </section>
-
-  </section>
-
-
-
-  </section>
 
 
 
