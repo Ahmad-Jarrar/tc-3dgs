@@ -54,35 +54,51 @@
             <h1 class="title is-1 publication-title">Temporally Compressed 3D Gaussian Splatting for Dynamic Scenes</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="mailto:saqib.javed@epfl.ch">Saqib Javed</a><sup>&dagger;,1</sup>,</span>
+                <a href="mailto:saqib.javed@epfl.ch">Saqib Javed</a><sup>&dagger;</sup>,</span>
               <span class="author-block">
-                <a href="mailto:ahmad.khan@epfl.ch">Ahmad Jarrar Khan</a><sup>&dagger;,1</sup>,</span>
+                <a href="mailto:ahmad.khan@epfl.ch">Ahmad Jarrar Khan</a><sup>&dagger;</sup>,</span>
               <span class="author-block">
-                <a href="mailto:corentin.dumery@epfl.ch">Corentin Dumery</a><sup>1</sup>,
+                <a href="https://corentindumery.github.io">Corentin Dumery</a>,
               </span>
               <span class="author-block">
-                <a href="mailto:chen.zhao@epfl.ch">Chen Zhao</a><sup>1</sup>,
+                <a href="https://sailor-z.github.io">Chen Zhao</a>,
               </span>
               <span class="author-block">
-                <a href="mailto:mathieu.salzmann@epfl.ch">Mathieu Salzmann</a><sup>1,2</sup>
+                <a href="https://scholar.google.com/citations?user=n-B0jr4AAAAJ&hl=en">Mathieu Salzmann</a>
               </span>
             </div>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>EPFL,</span>
-              <span class="author-block"><sup>2</sup>Swiss Data Science Center</span>
-            </div>
-
+            <!-- <div class="is-size-5 publication-authors">
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>EPFL,</span>
+                <span class="author-block"><sup>2</sup>Swiss Data Science Center</span>
+              </div>
+            </div> -->
             <!-- Equal Contribution -->
 
             <div class="is-size-6 publication-authors">
               <span class="author-block"><sup>&dagger;</sup>Equal Contribution</span>
             </div>
 
+            <div class="columns is-size-5 publication-authors is-justify-content-center is-vcentered pt-5 mt-5">
+              <div class="is-one-third">
+                <img src="./static/images/cvlab_logo.png" alt="EPFL" style="height: 3em;" class="mx-5">
+              </div>
+              <div class="is-one-third">
+                <img src="./static/images/EPFL_Logo_Digital_RGB_PROD.png" alt="EPFL" style="height: 4em;" class="mx-5">
+              </div>
+              <div class="is-one-third">
+                <img
+                  src="https://cdn.prod.website-files.com/63ea083f4e797cf53055586b/6405c3775c1e61bd7d547e31_logo-sdsc.png"
+                  alt="SDSC" style="height: 3em;" class="mx-5">
+              </div>
+            </div>
+
+
             <div class="column has-text-centered">
               <div class="publication-links">
                 <!-- PDF Link. -->
-                <span class="link-block">
+                <span class="link-block px-3">
                   <a href="https://arxiv.org/pdf/2412.05700" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -90,7 +106,7 @@
                     <span>Paper</span>
                   </a>
                 </span>
-                <span class="link-block">
+                <span class="link-block  px-3">
                   <a href="https://arxiv.org/abs/2412.05700" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -262,9 +278,9 @@
             </video>
             <video class="compared compared-right" data-compare="STG" loop muted autoplay>
               <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
-              <source src="./static/videos/basketball_c3dgs_0.webm" type="video/webm">
+              <source src="./static/videos/basketball_stg_0.webm" type="video/webm">
               <p>Your browser doesn't support HTML5 video. Here is a <a
-                  href="./static/videos/basketball_c3dgs_0.webm">link to the video</a> instead.
+                  href="./static/videos/basketball_stg_0.webm">link to the video</a> instead.
               </p>
             </video>
           </div>
@@ -299,75 +315,21 @@
 
       <div class="hero-body">
         <div class="container is-max-desktop">
-          <h2 class="title is-3">Panoptic Sports Dataset</h2>
-          <div id="results-carousel" class="carousel results-carousel">
-
-            <div class="item item-chair-tp">
-              <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              </video>
+          <h2 class="title is-3">Neural 3d Video Dataset</h2>
+          <div class="columns is-centered">
+            <!-- Add image comparisons -->
+            <div class="column is-half">
+              <div class="compare">
+                <img class="compared compared-left" data-compare="Ground Truth" src="./static/images/steak_gt.png" />
+                <img class="compared compared-right" data-compare="Ours" src="./static/images/steak_ours.png" />
+              </div>
             </div>
-
-            <div class="item item-blueshirt">
-              <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              </video>
+            <div class="column is-half">
+              <div class="compare">
+                <img class="compared compared-left" data-compare="Ground Truth" src="./static/images/spinich_gt.png" />
+                <img class="compared compared-right" data-compare="Ours" src="./static/images/spinich_ours.png" />
+              </div>
             </div>
-
-            <div class="item item-coffee">
-              <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              </video>
-            </div>
-            <div class="item item-mask">
-              <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              </video>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </section>
-
-  <section class="section">
-
-    <section class="hero is-small">
-
-
-      <div class="hero-body">
-        <div class="container is-max-desktop">
-          <h2 class="title is-3">DyNeRF Dataset</h2>
-          <div id="results-carousel" class="carousel results-carousel">
-
-            <div class="item item-chair-tp">
-              <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              </video>
-            </div>
-
-            <div class="item item-blueshirt">
-              <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              </video>
-            </div>
-
-            <div class="item item-coffee">
-              <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              </video>
-            </div>
-            <div class="item item-mask">
-              <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              </video>
-            </div>
-
-          </div>
-        </div>
-      </div>
     </section>
 
   </section>
@@ -380,42 +342,25 @@
       <div class="hero-body">
         <div class="container is-max-desktop">
           <h2 class="title is-3">Technicolor Dataset</h2>
-          <div id="results-carousel" class="carousel results-carousel">
-
-            <div class="item item-brithday">
-              <video poster="" id="brithday" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/birthday_ours.webm" type="video/webm">
-              </video>
+          <div class="columns is-centered">
+            <!-- Add image comparisons -->
+            <div class="column is-half">
+              <div class="compare">
+                <img class="compared compared-left" data-compare="Ground Truth" src="./static/images/painter_gt.png" />
+                <img class="compared compared-right" data-compare="Ours" src="./static/images/painter_ours.png" />
+              </div>
             </div>
-
-            <div class="item item-fabien">
-              <video poster="" id="fabien" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/fabien_ours.webm" type="video/webm">
-              </video>
+            <div class="column is-half">
+              <div class="compare">
+                <img class="compared compared-left" data-compare="Ground Truth" src="./static/images/train_gt.png" />
+                <img class="compared compared-right" data-compare="Ours" src="./static/images/train_ours.png" />
+              </div>
             </div>
-
-            <div class="item item-painter">
-              <video poster="" id="painter" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/painter_ours.webm" type="video/webm">
-              </video>
-            </div>
-
-            <div class="item item-theater">
-              <video poster="" id="theater" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/theater_ours.webm" type="video/webm">
-              </video>
-
-            </div>
-            <!-- <div class="item item-train">
-              <video poster="" id="train" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/train_ours.webm" type="video/webm">
-              </video>
-            </div> -->
-
-          </div>
-        </div>
-      </div>
     </section>
+
+  </section>
+
+
 
   </section>
 
@@ -452,7 +397,8 @@
           <div class="content">
             <p>
               This website is based on the source code of <a
-                href="https://github.com/nerfies/nerfies.github.io">nerfies</a>. We thank the authors for sharing the
+                href="https://github.com/nerfies/nerfies.github.io">nerfies</a>. Video comparisons were made using <a
+                href="https://github.com/nivoliev/html-compare">html-compare</a>. We thank the authors for sharing the
               templates.
             </p>
           </div>
