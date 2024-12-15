@@ -223,98 +223,101 @@
     </div>
   </section>
 
-  \<center>
+  <center>
     <h2 class="title is-3">Visual Comparisons</h2>
   </center>
 
   <section class="section">
     <section class="hero is-light is-small">
       <div class="hero-body">
-        <div class="container is-max-desktop">
-          <h2 class="title is-3">Panoptic Dataset</h2>
-          <!-- Video Comparison -->
-          <!-- <div class="compare1"> -->
-          <!-- <img class="compared compared-left" data-compare="standard" src="./static/images/interpolate_start.jpg" />
-            <img class="compared compared-right" data-compare="ours" src="./static/images/interpolate_end.jpg" /> -->
-          <!-- </div> -->
-
-          <h2 class="is-size-5">Ours vs Dynamic3DGaussians</h2>
-          <div class="compare1">
-            <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay playsinline>
-              <source src="./static/videos/basketball_ours_0.mp4" type="video/mp4">
-              <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              <p>Your browser doesn't support HTML5 video. Here is a <a
-                  href="./static/videos/basketball_ours_0.mp4">link to the video</a> instead.
-              </p>
-            </video>
-            <video class="compared1 compared1-right" data-compare="Dynamic3DGS" loop muted autoplay playsinline>
-              <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
-              <source src="./static/videos/basketball_pretrained_0.webm" type="video/webm">
-              <source src="./static/videos/basketball_pretrained_0.mp4" type="video/mp4">
-              <p>Your browser doesn't support HTML5 video. Here is a <a
-                  href="./static/videos/basketball_pretrained_0.mp4">link to the video</a> instead.
-              </p>
-            </video>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <h2 class="title">Panoptic Dataset</h2>
           </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-two-fifths">
+            <div class="container">
+              <h2 class="is-size-5">Ours vs Dynamic3DGaussians</h2>
+              <div class="compare1">
+                <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay playsinline>
+                  <source src="./static/videos/basketball_ours_0.mp4" type="video/mp4">
+                  <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+                  <p>Your browser doesn't support HTML5 video. Here is a <a
+                      href="./static/videos/basketball_ours_0.mp4">link to the video</a> instead.
+                  </p>
+                </video>
+                <video class="compared1 compared1-right" data-compare="Dynamic3DGS" loop muted autoplay playsinline>
+                  <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
+                  <source src="./static/videos/basketball_pretrained_0.webm" type="video/webm">
+                  <source src="./static/videos/basketball_pretrained_0.mp4" type="video/mp4">
+                  <p>Your browser doesn't support HTML5 video. Here is a <a
+                      href="./static/videos/basketball_pretrained_0.mp4">link to the video</a> instead.
+                  </p>
+                </video>
+              </div>
 
-          <h2 class="is-size-5">Ours vs 4DGaussians</h2>
-          <div class="compare1">
-            <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay playsinline>
-              <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              <source src="./static/videos/basketball_ours_0.mp4" type="video/mp4">
-              <p>Your browser doesn't support HTML5 video. Here is a <a
-                  href="./static/videos/basketball_ours_0.webm">link to the video</a> instead.
-              </p>
-            </video>
-            <video class="compared1 compared1-right" data-compare="4D Gaussians" loop muted autoplay playsinline>
-              <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
-              <source src="./static/videos/basketball_4dgaussian_0.webm" type="video/webm">
-              <source src="./static/videos/basketball_4dgaussian_0.mp4" type="video/mp4">
-              <p>Your browser doesn't support HTML5 video. Here is a <a
-                  href="./static/videos/basketball_4dgaussian_0.webm">link to the video</a> instead.
-              </p>
-            </video>
+              <h2 class="is-size-5">Ours vs 4DGaussians</h2>
+              <div class="compare1">
+                <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay playsinline>
+                  <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+                  <source src="./static/videos/basketball_ours_0.mp4" type="video/mp4">
+                  <p>Your browser doesn't support HTML5 video. Here is a <a
+                      href="./static/videos/basketball_ours_0.webm">link to the video</a> instead.
+                  </p>
+                </video>
+                <video class="compared1 compared1-right" data-compare="4D Gaussians" loop muted autoplay playsinline>
+                  <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
+                  <source src="./static/videos/basketball_4dgaussian_0.webm" type="video/webm">
+                  <source src="./static/videos/basketball_4dgaussian_0.mp4" type="video/mp4">
+                  <p>Your browser doesn't support HTML5 video. Here is a <a
+                      href="./static/videos/basketball_4dgaussian_0.webm">link to the video</a> instead.
+                  </p>
+                </video>
+              </div>
+
+              <h2 class="is-size-5">Ours vs STG</h2>
+              <div class="compare1">
+                <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay playsinline>
+                  <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+                  <source src="./static/videos/basketball_ours_0.mp4" type="video/mp4">
+                  <p>Your browser doesn't support HTML5 video. Here is a <a
+                      href="./static/videos/basketball_ours_0.webm">link to the video</a> instead.
+                  </p>
+                </video>
+                <video class="compared1 compared1-right" data-compare="STG" loop muted autoplay playsinline>
+                  <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
+                  <source src="./static/videos/basketball_stg_0.webm" type="video/webm">
+                  <source src="./static/videos/basketball_stg_0.mp4" type="video/mp4">
+                  <p>Your browser doesn't support HTML5 video. Here is a <a
+                      href="./static/videos/basketball_stg_0.webm">link to the video</a> instead.
+                  </p>
+                </video>
+              </div>
+
+              <h2 class="is-size-5">Ours vs Ground Truth</h2>
+              <div class="compare1">
+                <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay playsinline>
+                  <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
+                  <source src="./static/videos/basketball_ours_0.mp4" type="video/mp4">
+                  <p>Your browser doesn't support HTML5 video. Here is a <a
+                      href="./static/videos/basketball_ours_0.webm">link
+                      to the video</a> instead.
+                  </p>
+                </video>
+                <video class="compared1 compared1-right" data-compare="Ground Truth" loop muted autoplay playsinline>
+                  <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
+                  <source src="./static/videos/basketball_gt_0.webm" type="video/webm">
+                  <source src="./static/videos/basketball_gt_0.mp4" type="video/mp4">
+                  <p>Your browser doesn't support HTML5 video. Here is a <a
+                      href="./static/videos/basketball_gt_0.webm">link
+                      to the video</a> instead.
+                  </p>
+                </video>
+              </div>
+
+            </div>
           </div>
-
-          <h2 class="is-size-5">Ours vs STG</h2>
-          <div class="compare1">
-            <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay playsinline>
-              <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              <source src="./static/videos/basketball_ours_0.mp4" type="video/mp4">
-              <p>Your browser doesn't support HTML5 video. Here is a <a
-                  href="./static/videos/basketball_ours_0.webm">link to the video</a> instead.
-              </p>
-            </video>
-            <video class="compared1 compared1-right" data-compare="STG" loop muted autoplay playsinline>
-              <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
-              <source src="./static/videos/basketball_stg_0.webm" type="video/webm">
-              <source src="./static/videos/basketball_stg_0.mp4" type="video/mp4">
-              <p>Your browser doesn't support HTML5 video. Here is a <a
-                  href="./static/videos/basketball_stg_0.webm">link to the video</a> instead.
-              </p>
-            </video>
-          </div>
-
-          <h2 class="is-size-5">Ours vs Ground Truth</h2>
-          <div class="compare1">
-            <video class="compared1 compared1-left" data-compare="Ours" loop muted autoplay playsinline>
-              <source src="./static/videos/basketball_ours_0.webm" type="video/webm">
-              <source src="./static/videos/basketball_ours_0.mp4" type="video/mp4">
-              <p>Your browser doesn't support HTML5 video. Here is a <a
-                  href="./static/videos/basketball_ours_0.webm">link
-                  to the video</a> instead.
-              </p>
-            </video>
-            <video class="compared1 compared1-right" data-compare="Ground Truth" loop muted autoplay playsinline>
-              <!-- <source src="./static/videos/dollyzoom.mp4" type="video/mp4"> -->
-              <source src="./static/videos/basketball_gt_0.webm" type="video/webm">
-              <source src="./static/videos/basketball_gt_0.mp4" type="video/mp4">
-              <p>Your browser doesn't support HTML5 video. Here is a <a href="./static/videos/basketball_gt_0.webm">link
-                  to the video</a> instead.
-              </p>
-            </video>
-          </div>
-
         </div>
       </div>
     </section>
