@@ -40,7 +40,7 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/compare.js"></script>
   <script src="./static/js/index.js"></script>
-  
+
   <script src="./static/twentytwenty/js/jquery-3.2.1.min.js" defer type="text/javascript"></script>
   <script src="./static/twentytwenty/js/jquery.event.move.js" defer type="text/javascript"></script>
   <script src="./static/twentytwenty/js/jquery.twentytwenty.js" defer type="text/javascript"></script>
@@ -85,9 +85,11 @@
               <span class="author-block"><sup>&dagger;</sup>Equal Contribution</span>
             </div>
 
-            <img src="./static/images/cvlab_logo.png" alt="EPFL" style="width:12%; height:auto;margin-right: -30px;margin-left: 50px;">
+            <img src="./static/images/cvlab_logo.png" alt="EPFL"
+              style="width:12%; height:auto;margin-right: -30px;margin-left: 50px;">
             <img src="./static/images/favicon.svg" alt="EPFL" style="width:12%; height:auto;margin-left: 60px;">
-            <img src="./static/images/sdsc.png" alt="EPFL" style="width:15%; height:auto; margin-left: 38px; margin-bottom: 4px;">
+            <img src="./static/images/sdsc.png" alt="EPFL"
+              style="width:15%; height:auto; margin-left: 38px; margin-bottom: 4px;">
 
 
             <div class="column has-text-centered">
@@ -211,7 +213,9 @@
           <!-- Add method image -->
           <img src="./static/images/method.png" alt="Method" style="width: 100%; max-width: 1000px;">
           <div class="content has-text-justified">
-            Our approach involves a temporally consistent masking strategy to select relevant 3D Gaussians across frames. The masked Gaussians are then pruned and quantized using a gradient-based, parameter-aware bit-precision quantization scheme, which optimizes memory usage while preserving scene fidelity.
+            Our approach involves a temporally consistent masking strategy to select relevant 3D Gaussians across
+            frames. The masked Gaussians are then pruned and quantized using a gradient-based, parameter-aware
+            bit-precision quantization scheme, which optimizes memory usage while preserving scene fidelity.
           </div>
         </div>
       </div>
@@ -222,7 +226,7 @@
   \<center>
     <h2 class="title is-3">Visual Comparisons</h2>
   </center>
-  
+
   <section class="section">
     <section class="hero is-light is-small">
       <div class="hero-body">
@@ -230,7 +234,7 @@
           <h2 class="title is-3">Panoptic Dataset</h2>
           <!-- Video Comparison -->
           <!-- <div class="compare1"> -->
-            <!-- <img class="compared compared-left" data-compare="standard" src="./static/images/interpolate_start.jpg" />
+          <!-- <img class="compared compared-left" data-compare="standard" src="./static/images/interpolate_start.jpg" />
             <img class="compared compared-right" data-compare="ours" src="./static/images/interpolate_end.jpg" /> -->
           <!-- </div> -->
 
@@ -316,123 +320,110 @@
     </section>
   </section>
 
-  <style>
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* Creates 2 columns with equal width */
-      grid-gap: 10px; /* Adjust the gap between the divs */
-    }
-    .grid-item {
-      width: 100%;
-    }
-  </style>
+  <section class="section">
 
-<section class="section">
-
-  <section class="hero is-small">
+    <section class="hero is-small">
 
 
-    <div class="hero-body">
-      <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
 
-        <h3 class="title is-3">Technicolor Dataset</h2>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-
-            
-            <div class="content has-text-justified">
-                      <!-- Add image comparisons -->
-                      <style>
-                        .grid-container {
-                          display: grid;
-                          grid-template-columns: repeat(2, 1fr); /* Creates 2 columns with equal width */
-                          grid-gap: 10px; /* Adjust the gap between the divs */
-                        }
-                        .grid-item {
-                          width: 100%;
-                        }
-                      </style>
-
-                  <div class="grid-container">
-                    <div class="grid-item">
-                      <div class="compare" style="width: 467px; margin-right: 20px; margin-left: -70px; ">
-                        <img class="slider-image" style="width: 467px" src="./static/images/painter_ours.png" />
-                        <img class="slider-image" style="width: 467px" src="./static/images/painter_gt.png" />
-                      </div>
-                    </div>
-                    <div class="grid-item">
-                      <div class="compare" style="width: 467px; margin-right: 20px; ">
-                        <img class="slider-image" style="width: 467px" src="./static/images/train_ours.png" />
-                        <img class="slider-image" style="width: 467px" src="./static/images/train_gt.png" />
-                      </div>
-                    </div>
-                    
-                    <div class="grid-item">
-                      <div>
-                        <span style="display: inline; text-align: left; margin-right: 335px; margin-left: -70px;"><b>Ours</b></span>
-                        <span style="display: inline; text-align: right; margin-left: -15px"><b>Ground Truth</b></span>
-                      </div>
-                    </div>
-
-                    <div class="grid-item">
-                      <div>
-                        <span style="display: inline; text-align: left; margin-right: 335px; "><b>Ours</b></span>
-                          <span style="display: inline; text-align: right; margin-left: -30px"><b>Ground Truth</b></span>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-            </div>
-          </div>
-
-                  <!--/ Paper video. -->
+          <h3 class="title is-3">Technicolor Dataset</h2>
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-full">
 
 
-          <h3 class="title is-3">Neural 3D Video Dataset</h2>
-         <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
                 <div class="content has-text-justified">
-                  <div class="grid-container">
-                    <div class="grid-item">
-                      <div class="compare" style="width: 467px; margin-right: 20px; margin-left: -70px;">
-                        <img class="slider-image" style="width: 467px" src="./static/images/spinich_ours.png" />
-                        <img class="slider-image" style="width: 467px" src="./static/images/spinich_gt.png" />
+
+                  <div class="columns is-desktop">
+                    <div class="column">
+                      <div class="compare">
+                        <img class="slider-image" src="./static/images/painter_ours.png" />
+                        <img class="slider-image" src="./static/images/painter_gt.png" />
+                      </div>
+
+                      <div class="columns">
+                        <div class="column">
+                          <p class="has-text-weight-bold has-text-left">Ours</p>
+                        </div>
+                        <div class="column">
+                          <p class="has-text-weight-bold has-text-right">Ground Truth</p>
+                        </div>
                       </div>
                     </div>
-                    <div class="grid-item">
-                      <div class="compare" style="width: 467px; ">
-                        <img class="slider-image" style="width: 467px" src="./static/images/steak_ours.png" />
-                        <img class="slider-image" style="width: 467px" src="./static/images/steak_ours.png" />
+                    <div class="column">
+                      <div class="compare">
+                        <img class="slider-image" src="./static/images/train_ours.png" />
+                        <img class="slider-image" src="./static/images/train_gt.png" />
                       </div>
-                    </div>
-                    <div class="grid-item">
-                      <div>
-                        <span style="display: inline; text-align: left; margin-right: 335px;  margin-left: -70px;"><b>Ours</b></span>
-                        <span style="display: inline; text-align: right; margin-left: -15px"><b>Ground Truth</b></span>
+                      <div class="columns">
+                        <div class="column">
+                          <p class="has-text-weight-bold has-text-left">Ours</p>
+                        </div>
+                        <div class="column">
+                          <p class="has-text-weight-bold has-text-right">Ground Truth</p>
+                        </div>
                       </div>
                     </div>
 
-                    <div class="grid-item">
-                      <div>
-                        <span style="display: inline; text-align: left; margin-right: 335px; "><b>Ours</b></span>
-                          <span style="display: inline; text-align: right; margin-left: -50px "><b>Ground Truth</b></span>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--/ Paper video. -->
+
+
+            <h3 class="title is-3">Neural 3D Video Dataset</h2>
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+                  <div class="content has-text-justified">
+                    <div class="columns is-desktop">
+                      <div class="column">
+                        <div class="compare">
+                          <img class="slider-image" src="./static/images/spinich_ours.png" />
+                          <img class="slider-image" src="./static/images/spinich_gt.png" />
+                        </div>
+                        <div class="columns">
+                          <div class="column">
+                            <p class="has-text-weight-bold has-text-left">Ours</p>
+                          </div>
+                          <div class="column">
+                            <p class="has-text-weight-bold has-text-right">Ground Truth</p>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="column">
+                        <div class="compare">
+                          <img class="slider-image" src="./static/images/steak_ours.png" />
+                          <img class="slider-image" src="./static/images/steak_ours.png" />
+                        </div>
+                        <div class="columns">
+                          <div class="column">
+                            <p class="has-text-weight-bold has-text-left">Ours</p>
+                          </div>
+                          <div class="column">
+                            <p class="has-text-weight-bold has-text-right">Ground Truth</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-          </div>
+              </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   </section>
 
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      
+
       <pre><code>@misc{javed2024temporallycompressed3dgaussian,
         title={Temporally Compressed 3D Gaussian Splatting for Dynamic Scenes}, 
         author={Saqib Javed and Ahmad Jarrar Khan and Corentin Dumery and Chen Zhao and Mathieu Salzmann},
