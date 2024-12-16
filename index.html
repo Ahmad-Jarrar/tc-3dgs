@@ -8,19 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.5">
   <title>TC3DGS</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1W994EE61"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+  gtag('config', 'G-G1W994EE61');
+</script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -164,11 +160,7 @@
         </h2> -->
       </div>
     </div>
-  </section>
 
-
-
-  <section class="section">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
@@ -202,6 +194,7 @@
         </div>
       </div>
       <!--/ Abstract. -->
+  <!-- </section> -->
 
       <!-- Paper video. -->
       <div class="columns is-centered has-text-centered">
@@ -220,16 +213,14 @@
           </div>
         </div>
       </div>
-  </section>
 
-  <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Keypoint Interpolation</h2>
           <div class="content has-text-justified">
+          <h2 class="title is-size-5">Keypoint Interpolation</h2>
             <p>
-              We propose a novel keypoint interpolation method that leverages the Ramer-Douglas-Peucker algorithm to
+              We propose a novel keypoint interpolation method that leverages a variant of the Ramer-Douglas-Peucker algorithm to
               interpolate Gaussian trajectories across frames. This allows us to further reduce storage requirements
               while maintaining the visual quality of the scene. Our method can achieve much interpolation error than
               uniform sampling while using similar or lower number of keypoints.
@@ -238,7 +229,7 @@
         </div>
       </div>
       <div class="columns is-centered has-text-centered">
-        <div class="column is-full">
+        <div class="column is-four-fifths">
           <div id="plot"></div>
           <div class="column is-full">Max Keypoints &nbsp; <input type="range" min="3" max="10" value="6"
               id="keypoint-slider" oninput="handleSlider(this.value)">&nbsp;
