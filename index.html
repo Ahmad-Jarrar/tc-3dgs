@@ -40,6 +40,7 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/compare.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
   <script src="./static/twentytwenty/js/jquery-3.2.1.min.js" defer type="text/javascript"></script>
   <script src="./static/twentytwenty/js/jquery.event.move.js" defer type="text/javascript"></script>
@@ -219,8 +220,31 @@
           </div>
         </div>
       </div>
-      <!--/ Paper video. -->
-    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Keypoint Interpolation</h2>
+          <div class="content has-text-justified">
+            <p>
+              We propose a novel keypoint interpolation method that leverages the Ramer-Douglas-Peucker algorithm to
+              interpolate Gaussian trajectories across frames. This allows us to further reduce storage requirements
+              while maintaining the visual quality of the scene. Our method can achieve much interpolation error than
+              uniform sampling while using similar or lower number of keypoints.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <div id="plot"></div>
+          <div class="column is-full">Max Keypoints &nbsp; <input type="range" min="3" max="10" value="6"
+              id="keypoint-slider" oninput="handleSlider(this.value)">&nbsp;
+            <span id="keypoint-slider-value">3</span>
+          </div>
+        </div>
   </section>
 
   <center>
@@ -457,5 +481,228 @@
   </footer>
 
 </body>
+
+<script>
+
+  function updatePlot(value) {
+    // Read data from json file
+    fetch(`static/graph_data/max_keypoints_${value}.json`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+
+        var func1 = data.function_values[0];
+        var func2 = data.function_values[1];
+        var func3 = data.function_values[2];
+
+        var uniform_idx = data.uniform_keypoints_idx;
+        console.log(uniform_idx);
+
+        var optimized_idx_1 = data.optimized_keypoints_idx[0];
+        var optimized_idx_2 = data.optimized_keypoints_idx[1];
+        var optimized_idx_3 = data.optimized_keypoints_idx[2];
+
+        console.log(optimized_idx_1);
+        console.log(optimized_idx_2);
+        console.log(optimized_idx_3);
+
+        console.log(data.uniform_error);
+        console.log(data.optimized_error);
+
+        var u_error = data.uniform_error.toFixed(4);
+        var o_error = data.optimized_error.toFixed(4);
+
+
+        var x = Array.from({ length: func1.length }, (x, i) => i);
+
+        const line_width = 2;
+        const marker_size = 10;
+        const uniform_line_color = 'rgb(200 113 214)';
+        const uniform_marker_color = 'rgb(179 61 198)';
+
+        const optimized_line_colors = ['rgb(234 85 69)', 'rgb(239 155 32)', 'rgb(135 188 69)'];
+        const optimized_marker_colors = ['rgb(234 85 69)', 'rgb(239 155 32)', 'rgb(135 188 69)'];
+
+        const function_line_colors = ['rgb(249 205 200)', 'rgb(245 220 142)', 'rgb(224 231 156)'];
+
+        var f_1 = {
+          x: x,
+          y: func1,
+          type: 'lines',
+          name: 'f<sub>1</sub>',
+          line: {
+            dash: 'solid',
+            color: function_line_colors[0],
+            width: line_width
+          },
+          // legendgroup: 'functions',
+        };
+
+        var f_2 = {
+          x: x,
+          y: func2,
+          type: 'lines',
+          name: 'f<sub>2</sub>',
+          line: {
+            dash: 'solid',
+            color: function_line_colors[1],
+            width: line_width
+          },
+          // legendgroup: 'functions',
+        };
+
+        var f_3 = {
+          x: x,
+          y: func3,
+          type: 'lines',
+          name: 'f<sub>3</sub>',
+          line: {
+            dash: 'solid',
+            color: function_line_colors[2],
+            width: line_width
+          },
+          // legendgroup: 'functions',
+        };
+
+        var u_1 = {
+          x: uniform_idx,
+          y: uniform_idx.map(i => func1[i]),
+          mode: 'lines+markers',
+          name: `Uniform KP (${uniform_idx.length})`,
+          line: {
+            dash: 'dot',
+            width: line_width,
+            color: uniform_line_color,
+          },
+          marker: {
+            color: uniform_marker_color,
+            size: marker_size
+          },
+
+        };
+
+        var u_2 = {
+          x: uniform_idx,
+          y: uniform_idx.map(i => func2[i]),
+          mode: 'lines+markers',
+          name: 'Uniform Keypoints 2',
+          line: {
+            dash: 'dot',
+            width: line_width,
+            color: uniform_line_color,
+          },
+          marker: {
+            color: uniform_marker_color,
+            size: marker_size
+          },
+          showlegend: false
+        };
+
+        var u_3 = {
+          x: uniform_idx,
+          y: uniform_idx.map(i => func3[i]),
+          mode: 'lines+markers',
+          name: 'Uniform Keypoints 3',
+          line: {
+            dash: 'dot',
+            width: line_width,
+            color: uniform_line_color,
+          },
+          marker: {
+            color: uniform_marker_color,
+            size: marker_size
+          },
+          showlegend: false
+        };
+
+        var o_1 = {
+          x: optimized_idx_1,
+          y: optimized_idx_1.map(i => func1[i]),
+          mode: 'lines+markers',
+          name: `Our KP 1 (${optimized_idx_1.length})`,
+          line: {
+            dash: 'dashdot',
+            color: optimized_line_colors[0],
+            width: line_width
+          },
+          marker: {
+            color: optimized_marker_colors[0],
+            size: marker_size
+          },
+        };
+
+        var o_2 = {
+          x: optimized_idx_2,
+          y: optimized_idx_2.map(i => func2[i]),
+          mode: 'lines+markers',
+          name: `Our KP 2 (${optimized_idx_2.length})`,
+          line: {
+            dash: 'dashdot',
+            color: optimized_line_colors[1],
+            width: line_width
+          },
+          marker: {
+            color: optimized_marker_colors[1],
+            size: marker_size
+          },
+        };
+
+        var o_3 = {
+          x: optimized_idx_3,
+          y: optimized_idx_3.map(i => func3[i]),
+          mode: 'lines+markers',
+          name: `Our KP 3 (${optimized_idx_3.length})`,
+          line: {
+            dash: 'dashdot',
+            color: optimized_line_colors[2],
+            width: line_width
+          },
+          marker: {
+            color: optimized_marker_colors[2],
+            size: marker_size
+          },
+        };
+
+
+        var data = [f_1, f_2, f_3, u_1, o_1, u_2, o_2, u_3, o_3];
+        var layout = {
+          title: { text: "<b>Uniform Sampling vs Our Sampling</b><br>Uniform Error: " + u_error + "  Our Error: " + o_error },
+
+          xaxis: {
+            range: [0, 150],
+            autorange: false
+          },
+          yaxis: {
+            range: [-1.5, 1.5],
+            autorange: false
+          },
+
+          legend: {
+            font: {
+              size: 16
+            },
+            orientation: 'h',
+            traceorder: 'normal',
+          },
+
+          height: 700,
+
+        };
+
+        var config = { responsive: true }
+
+        Plotly.newPlot('plot', data, layout, config);
+      });
+  }
+
+  function handleSlider(value) {
+    document.getElementById('keypoint-slider-value').innerText = value;
+    updatePlot(value);
+
+  }
+
+  handleSlider(6);
+
+</script>
 
 </html>
