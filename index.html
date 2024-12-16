@@ -9,14 +9,14 @@
   <title>TC3DGS</title>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G1W994EE61"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1W994EE61"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-G1W994EE61');
-</script>
+    gtag('config', 'G-G1W994EE61');
+  </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -194,7 +194,7 @@
         </div>
       </div>
       <!--/ Abstract. -->
-  <!-- </section> -->
+      <!-- </section> -->
 
       <!-- Paper video. -->
       <div class="columns is-centered has-text-centered">
@@ -214,28 +214,29 @@
         </div>
       </div>
 
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div class="content has-text-justified">
-          <h2 class="title is-size-5">Keypoint Interpolation</h2>
-            <p>
-              We propose a novel keypoint interpolation method that leverages a variant of the Ramer-Douglas-Peucker algorithm to
-              interpolate Gaussian trajectories across frames. This allows us to further reduce storage requirements
-              while maintaining the visual quality of the scene. Our method can achieve much interpolation error than
-              uniform sampling while using similar or lower number of keypoints.
-            </p>
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <h2 class="title is-size-5">Keypoint Interpolation</h2>
+              <p>
+                We propose a novel keypoint interpolation method that leverages a variant of the Ramer-Douglas-Peucker
+                algorithm to
+                interpolate Gaussian trajectories across frames. This allows us to further reduce storage requirements
+                while maintaining the visual quality of the scene. Our method can achieve much interpolation error than
+                uniform sampling while using similar or lower number of keypoints.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <div id="plot"></div>
-          <div class="column is-full">Max Keypoints &nbsp; <input type="range" min="3" max="10" value="6"
-              id="keypoint-slider" oninput="handleSlider(this.value)">&nbsp;
-            <span id="keypoint-slider-value">3</span>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div id="plot"></div>
+            <div class="column is-full">Max Keypoints &nbsp; <input type="range" min="3" max="10" value="6"
+                id="keypoint-slider" oninput="handleSlider(this.value)">&nbsp;
+              <span id="keypoint-slider-value">3</span>
+            </div>
           </div>
-        </div>
   </section>
 
   <center>
@@ -472,8 +473,6 @@
   </footer>
 
 </body>
-
-<<<<<<< HEAD
 <script>
 
   function updatePlot(value) {
@@ -671,7 +670,7 @@
 
           legend: {
             font: {
-              size: 16
+              size: 10
             },
             orientation: 'h',
             traceorder: 'normal',
@@ -698,6 +697,5 @@
 </script>
 
 </html>
-=======
+
 </html>
->>>>>>> origin/main
