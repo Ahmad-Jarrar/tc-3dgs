@@ -4,13 +4,14 @@ This is the repository that contains source code for the [TC3DGS website](https:
 
 If you find TC3DGS useful for your work please cite:
 ```
-@misc{javed2024temporallycompressed3dgaussian,
-        title={Temporally Compressed 3D Gaussian Splatting for Dynamic Scenes}, 
-        author={Saqib Javed and Ahmad Jarrar Khan and Corentin Dumery and Chen Zhao and Mathieu Salzmann},
-        year={2024},
-        archivePrefix={arXiv},
-        url={https://arxiv.org/abs/2412.05700}, 
-  }
+@inproceedings{Javed_2025_BMVC,
+author    = {Saqib Javed and Ahmad Jarrar Khan and Corentin Dumery and Chen Zhao and Mathieu Salzmann},
+title     = {Temporally Compressed 3D Gaussian Splatting for Dynamic Scenes},
+booktitle = {36th British Machine Vision Conference 2025, {BMVC} 2025, Sheffield, UK, November 24-27, 2025},
+publisher = {BMVA},
+year      = {2025},
+url       = {https://bmva-archive.org.uk/bmvc/2025/assets/papers/Paper_543/paper.pdf}
+}
 ```
 
 # Website License
